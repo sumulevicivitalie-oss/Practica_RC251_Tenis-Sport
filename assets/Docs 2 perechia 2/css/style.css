@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.7;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+    color: #2d3748;
+}
+
+/* ==================== SARCINA 1: NAVBAR ==================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2d3748;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ==================== SARCINA 2: GRID SERVICII ==================== */
+.services {
+    max-width: 1280px;
+    margin: 100px auto;
+    padding: 0 40px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #2d3748, #4f46e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: #64748b;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+}
+
+.card-icon {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.service-card h3 {
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+    color: #2d3748;
+}
+
+/* Comentariu obligatoriu */
+ /* 
+    1fr = "one fraction" 
+    În repeat(auto-fit, minmax(280px, 1fr)) înseamnă că fiecare coloană 
+    ocupă o fracțiune egală din spațiul disponibil după ce s-a aplicat 
+    lățimea minimă de 280px. auto-fit permite containerului să se adapteze 
+    automat la orice rezoluție fără media queries.
+ */
+
+/* ==================== SARCINA 3: MISIUNE ==================== */
+.mission {
+    background: linear-gradient(135deg, #2d3748, #1e2937);
+    color: white;
+    padding: 110px 40px;
+}
+
+.mission-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+.mission-image {
+    flex: 1;
+    min-width: 320px;
+}
+
+.mission-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.mission-text {
+    flex: 1;
+    min-width: 320px;
+}
+
+.mission-text h2 {
+    font-size: 2.6rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.mission-text p {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    margin-bottom: 18px;
+}
+
+/* Inversare pe mobil */
+@media (max-width: 768px) {
+    .mission-container {
+        flex-direction: column-reverse;
+    }
+}

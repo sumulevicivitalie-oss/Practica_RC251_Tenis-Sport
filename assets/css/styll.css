@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* ====================== HEADER ====================== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #e63939;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* ====================== HERO ====================== */
+#hero {
+    background: #f5f5f5;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero-text h1 {
+    font-size: 3.2rem;
+    line-height: 1.1;
+}
+
+.hero-image {
+    height: 180px;
+    filter: drop-shadow(8px 8px 15px rgba(0,0,0,0.3));
+}
+
+/* ====================== GRID SERVICII ====================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+
+/* 
+   Explicație obligatorie:
+   1fr înseamnă 1 fraction (o fracțiune din spațiul disponibil).
+   În contextul acestui grid, după ce browser-ul aplică lățimea minimă 
+   de 280px (minmax), 1fr distribuie echitabil spațiul rămas între coloane.
+   Astfel grid-ul este complet auto-adaptiv.
+*/
+
+.service-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.service-card img {
+    width: 100%;
+    max-width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin: 60px 0 40px;
+}
+
+/* ====================== MISIUNE ====================== */
+#misiune {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.mission-flex {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.mission-image img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+    .mission-flex {
+        flex-direction: column-reverse;
+    }
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ====================== FOOTER ====================== */
+footer {
+    background: #333;
+    color: #ddd;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+}
